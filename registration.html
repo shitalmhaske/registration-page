@@ -1,0 +1,90 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+      <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<style>
+    .card1 {
+   height: 100px;
+}
+
+</style>
+ </head>
+ <body>
+     <div class="container mt-2 card1 ">
+         <div class="row ">
+             <div class="col-sm-6 offset-sm-3">
+                 <div id="output"></div>
+                 <div class="card">
+                     <div class="card-header text-center bg-primary"><h2 class="form-signin-heading">
+                         Registration</h2></div>
+                          
+                         <div class="card-body bg-secondary">
+                             <form>
+                            <div>
+                                 
+                                <label for="txtUsername" >
+                                    <h6>USERNAME:</h6></label>
+                                <input name="txtUsername" type="text" id="txtUsername" class="form-control  " placeholder="Enter Username"
+                                      
+                                   />
+                                   &nbsp;
+                                <!-- <br /> -->
+                                <label for="txtPassword">
+                                   <h6> PASSWORD:</h6></label>
+                                <input name="txtPassword" type="password" id="txtPassword" title="Password must contain: Minimum 8 characters atleast 1 Alphabet and 1 Number"
+                                    class="form-control" placeholder="Enter Password"   pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" />
+                                <!-- <br /> -->
+                                &nbsp;
+                                <label for="txtEmail">
+                                    <h6>EMAIL:</h6></label>
+                                <input name="txtEmail" id="txtEmail" class="form-control" placeholder="Enter Email"
+                                      type="email" />
+                                      &nbsp;
+                                <label for="txtCity">
+                                  <h6> CITY:</h6> </label>
+                                <input name="txtCity" id="txtCity" class="form-control" placeholder="Enter City"
+                                        />
+                                        &nbsp;
+                                <label for="txtMoNo">
+                                    <h6>MOBILE NO:</h6></label>
+                                <input name="txtMoNo" pattern="[6789][0-9]{9}" id="txtMoNo" class="form-control" placeholder="Enter Mobile number"
+                                       type="text" />
+                                       &nbsp;
+                                <hr />
+                                <input type="button"   name="btnSignup" value="Sign up" id="btnSignup" class="btn btn-primary w-100" onclick=" OnclickHandler()" />
+                            </div>
+                            </form>
+                         </div>
+                     </div>
+             </div>
+         </div>
+     </div>
+     
+    <script type="text/javascript">
+        
+        
+        function OnclickHandler() {
+            var txtPassword = document.getElementById("txtPassword");
+            var txtUserName = document.getElementById("txtUsername").value;
+            var txtEmail = document.getElementById("txtEmail").value;
+            var txtCity = document.getElementById("txtCity").value;
+            var txtMoNo = document.getElementById("txtMoNo").value;
+           
+                 console.log(txtUserName );
+                 if(txtUserName && txtEmail &&txtCity &&txtMoNo && txtPassword){
+                    document.getElementById("output").innerHTML=`<div class="alert alert-success">SUCCESSFULLY REGISTRATION </div>`
+                 }else{
+                    document.getElementById("output").innerHTML=`<div class="alert alert-danger"> Fail</div>`
+                 }
+              }
+        
+    </script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+ </body>
+ </html>
